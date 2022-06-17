@@ -1,23 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import Nav from "./components/Nav";
+import { Routes, Route, BrowserRouter as Router } from 'react-router-dom'
+import Productos from "./pages/Productos";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Carrito from "./pages/Carrito";
+import FunkoState from "./context/funkos/FunkoState";
+import UserState from "./context/users/UserState";
+
+
+
+
+
 
 function App() {
+
+  const [carrito, setCarrito] = useState([]);
+
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <UserState>
+      <FunkoState>
+
+       <Router>
+          <Nav />
+          <Routes>
+
+          {/* RUTAS DE AUTENTICACIÓN */}
+					  		<Route path='/registro' element={<Register />} />
+						  	<Route path='/iniciar-sesion' element={<Login />} />
+
+
+          {/* RUTAS PUBLICAS */}
+            <Route path='/' element={<Home />} />
+            <Route path="productos" element={<Productos carrito={carrito} setCarrito={setCarrito} />} />
+            <Route path="carrito" element={<Carrito />} />
+          </Routes>
+          <Footer />
+        </Router>
+
+      </FunkoState>
+      </UserState>
     </div>
   );
 }

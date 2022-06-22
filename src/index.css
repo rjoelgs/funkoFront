@@ -131,3 +131,22 @@ span{
   padding: .2em;
   border-radius: 10px;
 }
+.imgTable{
+  width: 75px;
+}
+.carrito{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+td{
+  background-color: #FFE5B4;
+  border-radius: 4px;
+  padding: .5em;
+}
+tr{
+  border: #262626 solid 1px;
+}

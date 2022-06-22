@@ -1,4 +1,4 @@
-import { useState } from "react";
+
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Nav from "./components/Nav";
@@ -9,6 +9,7 @@ import Register from "./pages/Register";
 import Carrito from "./pages/Carrito";
 import FunkoState from "./context/funkos/FunkoState";
 import UserState from "./context/users/UserState";
+import CarState from "./context/car/CarState";
 
 
 
@@ -17,7 +18,7 @@ import UserState from "./context/users/UserState";
 
 function App() {
 
-  const [carrito, setCarrito] = useState([]);
+  
 
 
 
@@ -25,6 +26,7 @@ function App() {
     <div className="App">
       <UserState>
       <FunkoState>
+      <CarState>
 
        <Router>
           <Nav />
@@ -37,12 +39,13 @@ function App() {
 
           {/* RUTAS PUBLICAS */}
             <Route path='/' element={<Home />} />
-            <Route path="productos" element={<Productos carrito={carrito} setCarrito={setCarrito} />} />
-            <Route path="carrito" element={<Carrito />} />
+            <Route path="/productos" element={<Productos />} />
+            <Route path="/carrito" element={<Carrito />} />
           </Routes>
           <Footer />
         </Router>
 
+      </CarState>
       </FunkoState>
       </UserState>
     </div>

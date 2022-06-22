@@ -1,11 +1,16 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import LoginRegistro from '../components/LoginRegistro'
+
 
 const Login = () => {
   return (
-    <div>
-      Login
+    <div className='cajaFormulario'>
+      <h1>Iniciar Sesión</h1>
+      <LoginRegistro /> 
+      <p>no tienes cuenta?{' '} <Link to='/registro'><span>Registrarse</span></Link></p>
     </div>
-  )
+  ) 
 }
 
 export default Login

@@ -4,7 +4,7 @@ import FunkoContext from '../context/funkos/FunkoContext';
 
 
 
-const Productos = ({carrito, setCarrito}) => {
+const Productos = () => {
 
   const ctx = useContext(FunkoContext);
   const { getFunkos, funkos } = ctx;
@@ -19,7 +19,7 @@ const Productos = ({carrito, setCarrito}) => {
   return (
     <div className='productos'>
      {funkos.map((funko)=>{
-      return <Tarjeta key={funko.id} data={funko} carrito={carrito} setCarrito={setCarrito}/>
+      return <Tarjeta key={funko.id} data={funko}/>
      })}
     </div>
   )

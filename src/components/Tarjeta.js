@@ -1,20 +1,18 @@
-import React from 'react'
+import React, {  useContext } from 'react'
+import CarContext from '../context/car/CarContext'
 
-const Tarjeta = ({data, carrito, setCarrito}) => {
+const Tarjeta = ({data}) => {
 
-  const {id, nombre, precio, imagen} = data;
+  const ctxCar = useContext(CarContext);
+  const { addCar } = ctxCar;
   
-  const funkoSeleccionado = {
-    id,
-    nombre,
-    precio,
-    imagen
-  }
-  
+  const handleClick=(data)=> {
 
-  const handleClick=(e)=> {
-    setCarrito(...carrito, funkoSeleccionado);
+    addCar(data)
+    
   }
+
+
 
   return (
     <div className='tarjeta'>
@@ -23,7 +21,8 @@ const Tarjeta = ({data, carrito, setCarrito}) => {
         <h3>{data.nombre}</h3>
         <h3>{data.precio}</h3>
         <h3>{data.coleccion}</h3>
-        <button onClick={(e) => handleClick(e)}>Agregar al carrito...</button>
+        <button onClick={() => handleClick(data)}>Agregar al carrito...</button>
+        <button>... Ver más</button>
       
     </div>
   )

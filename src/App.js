@@ -10,6 +10,8 @@ import Carrito from "./pages/Carrito";
 import FunkoState from "./context/funkos/FunkoState";
 import UserState from "./context/users/UserState";
 import CarState from "./context/car/CarState";
+import Producto from "./pages/Producto";
+
 
 
 
@@ -40,6 +42,7 @@ function App() {
           {/* RUTAS PUBLICAS */}
             <Route path='/' element={<Home />} />
             <Route path="/productos" element={<Productos />} />
+            <Route path="/productos/:id" element={<Producto />} />
             <Route path="/carrito" element={<Carrito />} />
           </Routes>
           <Footer />

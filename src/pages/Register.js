@@ -8,7 +8,7 @@ const Register = () => {
     <div className='cajaFormulario'>
       <h1>Registro de Usuario</h1>
       <FormularioRegistro /> 
-      <p>ya tienes cuenta?{' '} <Link to='/iniciar-sesion'><span>iniciar sesion</span></Link></p>
+      <p>ya tienes cuenta?{' '} <Link to='/iniciar-sesion'>iniciar sesion</Link></p>
     </div>
   ) 
 }

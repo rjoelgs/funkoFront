@@ -7,6 +7,7 @@ const FunkoState = (props) => {
 	// 1. ESTADO INICIAL
 	const initialState = {
 		funkos: [],
+		funko:{}
 	}
 
 	// 2. DISPATCHING Y REDUCERS
@@ -48,6 +49,22 @@ const FunkoState = (props) => {
 		}
 	}
 
+	const getFunko = async (id) => {
+		try{
+			const resp = await clienteAxios.get(`/api/funkoOne?id=${id}`)
+			console.log(resp)
+
+			dispatch({
+				type: 'OBTENER_FUNKO',
+				payload: resp.data,
+			})
+		   }catch(error){
+			 console.log(error)
+		   }
+	}
+
+	
+
 	// C. ACTUALIZAR GUITARRA
 	// ACTUALIZA EL DATO DE UNA GUITARRA A PARTIR DE UN FORMULARIO HACIA NUESTRA BASE DE DATOS.
 	// const updateGuitar = async (id, dataForm) => {
@@ -84,6 +101,8 @@ const FunkoState = (props) => {
 			value={{
 				funkos: globalState.funkos,
 				getFunkos,
+				getFunko,
+				funko: globalState.funko
 			}}
 		>
 			{props.children}

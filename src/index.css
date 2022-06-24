@@ -16,6 +16,9 @@ h1{
   color: #FFA500;
   font-family: var(--fuente-principal);
 }
+h2{
+  color: white;
+}
 header{
   display: block;
   flex-direction: row;
@@ -24,6 +27,7 @@ header{
   padding-top: 6em;
   padding-left: 6em;
   min-height: 500px;
+  color: #fff;
 }
 a{
   color: #FFF;
@@ -73,9 +77,13 @@ section{
 .tarjeta{
   width: 300px;
   margin: 2em;
-  border: #1F4690 5px solid;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   border-radius: 10px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .footer{
   display: flex;
@@ -141,6 +149,7 @@ span{
   align-items: center;
   margin-top: 2em;
   margin-bottom: 2em;
+  min-height: 75vh;
 }
 td{
   background-color: #FFE5B4;
@@ -149,4 +158,40 @@ td{
 }
 tr{
   border: #262626 solid 1px;
+}
+.imgDetalle{
+  width: 300px;
+}
+.tarjetaDetalle{
+  padding-left: 5%;
+}
+.logout:hover{
+  cursor: pointer;
+}
+.descripcion{
+  color: black
+}
+button{
+  padding: 10px;
+  margin: 10px;
+  color: white;
+  background-color: #3A5BA0;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  border-style: hidden;
+}
+button:hover{
+  opacity: .9;
+  cursor: pointer;
+}
+.botonesTarjeta{
+  display: flex;
+  flex-direction: row;
+}
+a{
+  font-size: 1.4em;
+  color: white;
+  padding: .2em;
+  border-radius: 10px;
+  font-weight: 900;
 }
